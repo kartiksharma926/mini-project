@@ -1,0 +1,25 @@
+while(strcmp(opc,"END")!=0)
+  {
+      if(strcmp(lab,"--")!=0)
+        fprintf(fp2,"%s\t%X\n",lab,loc);
+
+
+            if(strcmp(opc,"RESB")==0)
+           {
+                fprintf(fp1,"%X\t%s\t%s\t%s\n",address,lab,opc,oper);
+                address+=(atoi(oper));
+                loc+=(atoi(oper));
+           }
+              else if (strcmp(opc,"RESW")==0||strcmp(opc,"WORD")==0)
+    {
+        fprintf(fp1,"%X\t%s\t%s\t%s\n",address,lab,opc,oper);
+        address+=(3*(atoi(oper)));
+         loc+=(3*(atoi(oper)));
+    }
+           else if(strcmp(opc,"BYTE")==0)
+            {
+                fprintf(fp1,"%X\t%s\t%s\t%s\t\n",address,lab,opc,oper);
+                len=strlen(oper);
+                address+=len-3;
+                loc+=len-3;
+            }

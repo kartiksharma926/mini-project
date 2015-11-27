@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+  char a[10],ad[10],lab[10],opc[10],oper[10],symbol[10],ch,inp[15],ab[15],
+  addre[20][20]={"LOAD","STORE","LOADCH","STORECH","ADDITION","SUBTRACTION","MULTIPLICATION","DIVISION","J","JSUBTRCTION"},
+  code[20][20]={"00","0C","50","54","28","29","3A","3B","3E","3F"};
+  int st,diff,diff1,i,address,address1,add,len,alen,final,pre,j=0,loc=0,start,l,c=0,k=0,bol=0,bad=1;
+  FILE *fp1,*fp2,*fp3,*fp4;
+  while(bad==1)
+  {
+  printf("\n\nENTER THE FILE NAME  : ");
+  scanf("%s",&inp);
+  }
+}

@@ -1,0 +1,25 @@
+ while(strcmp(opc,"END")!=0)
+  {
+   if(strcmp(opc,"BYTE")==0)
+   {
+    fprintf(fp1,"%X\t%s\t%s\t%s\t",address,lab,opc,oper);
+    len=strlen(oper);
+    alen=len-3;
+    fprintf(fp4,"^");
+    for(i=2;i<(alen+2);i++)
+    {
+     itoa(oper[i],ad,16);
+     fprintf(fp1,"%s",ad);
+     fprintf(fp4,"%s",ad);
+    }
+    fprintf(fp1,"\n");
+   }
+   else if(strcmp(opc,"WORD")==0)
+   {
+    len=strlen(oper);
+    itoa(atoi(oper),a,10);
+    fprintf(fp1,"%X\t%s\t%s\t%s\t00000%s\n",address,lab,opc,oper,a);
+    fprintf(fp4,"^00000%s",a);
+   }
+   else if((strcmp(opc,"RESB")==0)||(strcmp(opc,"RESW")==0))
+    fprintf(fp1,"%X\t%s\t%s\t%s\n",address,lab,opc,oper);
